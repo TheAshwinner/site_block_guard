@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Embed test fixture</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 760px; margin: 40px auto; }
+      iframe { width: 100%; aspect-ratio: 16 / 9; border: 1px solid #ccc; }
+      p { color: #555; }
+    </style>
+  </head>
+  <body>
+    <h1>Embedded YouTube test (AT3 / FR3 / FR4)</h1>
+    <p>
+      This simulates a third-party article embedding a YouTube player.
+      <strong>Inside the schedule window</strong> (use <code>setTestNow('23:00')</code> in the
+      service-worker console) the player below should fail to load. <strong>Outside the
+      window</strong> (<code>setTestNow('12:00')</code>) it should play.
+    </p>
+    <iframe
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <p>If the frame above is blank/blocked, FR3 embed blocking is working.</p>
+  </body>
+</html>

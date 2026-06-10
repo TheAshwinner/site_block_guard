@@ -1,0 +1,11 @@
+{
+  "name": "site_block_guard",
+  "version": "0.1.0",
+  "description": "Scheduled, embed-aware Chrome MV3 site blocker with PIN unlock.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "set-pin": "node tools/set-pin.mjs"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Site Block Guard",
+  "version": "0.1.0",
+  "description": "Scheduled, embed-aware site blocker with a PIN unlock page.",
+  "permissions": ["declarativeNetRequest", "alarms", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["ui/blocked.html", "ui/blocked.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

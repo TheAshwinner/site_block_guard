@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Site Blocked</title>
+    <style>
+      :root { color-scheme: dark; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid;
+        place-items: center;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: #14161a;
+        color: #e8eaed;
+      }
+      .card {
+        width: min(92vw, 380px);
+        background: #1e2127;
+        border: 1px solid #2c2f36;
+        border-radius: 14px;
+        padding: 28px 26px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        text-align: center;
+      }
+      .lock { font-size: 34px; }
+      h1 { font-size: 18px; margin: 10px 0 4px; }
+      .site { color: #9aa0a6; font-size: 13px; word-break: break-all; margin-bottom: 20px; }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 22px;
+        letter-spacing: 6px;
+        text-align: center;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #3a3e46;
+        background: #14161a;
+        color: #e8eaed;
+      }
+      button {
+        width: 100%;
+        margin-top: 14px;
+        padding: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        border: 0;
+        border-radius: 10px;
+        background: #3b82f6;
+        color: white;
+        cursor: pointer;
+      }
+      button:disabled { opacity: 0.5; cursor: default; }
+      .error { color: #f28b82; font-size: 13px; min-height: 18px; margin-top: 12px; }
+    </style>
+  </head>
+  <body>
+    <form class="card" id="form">
+      <div class="lock">🔒</div>
+      <h1>This site is blocked</h1>
+      <div class="site" id="site"></div>
+      <input
+        id="pin"
+        type="password"
+        inputmode="numeric"
+        autocomplete="off"
+        placeholder="PIN"
+        autofocus
+      />
+      <button id="submit" type="submit">Unlock</button>
+      <div class="error" id="error"></div>
+    </form>
+    <script src="blocked.js"></script>
+  </body>
+</html>

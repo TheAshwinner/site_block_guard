@@ -33,7 +33,6 @@ All sites should have a password/PIN lock to open. In the future, I might consid
 
 ## Out of Scope
 - Time-quota / daily-allowance limits (block-after-N-minutes).
-- Redirect-on-block pages.
 - Cross-device sync.
 - Settings UI (configuration via editing the source is acceptable for a personal tool).
 
