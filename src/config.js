@@ -7,14 +7,14 @@ import { hm } from './schedule.js';
 
 export const config = {
   // FR1 — blocked 24/7 (whole domain + subdomains + subpaths).
-  alwaysBlocked: ['linkedin.com', 'facebook.com', 'x.com', 'fandom.com', 'instagram.com', 'tiktok.com'],
+  alwaysBlocked: ['linkedin.com', 'facebook.com', 'x.com', 'fandom.com', 'instagram.com', 'tiktok.com', 'spacebattles.com'],
 
   // FR2/FR3 — blocked only inside the schedule window; embeds follow the same window (FR4).
-  scheduledDomains: ['youtube.com', 'youtube-nocookie.com'],
+  scheduledDomains: ['youtube.com', 'youtube-nocookie.com', 'youtu.be'],
 
-  // FR2 — nightly window 22:00–07:00 (crosses midnight). days: 0=Sun..6=Sat.
+  // FR2 — nightly window 20:00–07:00 (crosses midnight). days: 0=Sun..6=Sat.
   schedule: {
-    startMin: hm(22, 0),
+    startMin: hm(20, 0),
     endMin: hm(7, 0),
     days: [0, 1, 2, 3, 4, 5, 6],
   },

@@ -2,8 +2,8 @@
 
 A personal Chrome (Manifest V3) extension that blocks distracting sites:
 
-- **Always-blocked** sites (LinkedIn, Facebook, X, Fandom) — 24/7.
-- **Scheduled** site (YouTube) — blocked only during a nightly window (default 22:00–07:00).
+- **Always-blocked** sites (LinkedIn, Facebook, X, Fandom, Instagram, TikTok, SpaceBattles) — 24/7.
+- **Scheduled** site (YouTube) — blocked only during a nightly window (default 20:00–07:00).
 - **Embed-aware** — blocks YouTube `<iframe>` embeds on third-party pages during the window,
   not just direct navigation.
 - **PIN-gated** — a blocked page redirects to a bundled PIN page; the correct PIN unlocks
@@ -45,6 +45,20 @@ npm test          # unit tests: schedule math, PIN, rule shapes
 Then follow [`TEST_PLAN.md`](./TEST_PLAN.md) for the in-browser checks. It uses a **test
 clock** (`setTestNow('23:00')` in the service-worker console) so you can verify the schedule
 without waiting until night.
+
+### Sites to test manually
+
+Real third-party pages that embed YouTube `<iframe>`s — useful for verifying embed blocking
+(FR3/FR4). Open each **inside the schedule window** (or `setTestNow('21:00')`); the embedded
+players should fail to load. Outside the window they should play.
+
+- https://forums.spacebattles.com/threads/sword-art-online-abridged-or-how-to-make-a-crap-franchise-worth-watching.350589
+  (also exercises the always-blocked `spacebattles.com` rule — the page itself should redirect
+  to the PIN page 24/7)
+- https://www.deltanews.tv/lifestyles/entertainment/snl-weekend-update-joke-swap-drops-jaws-with-raunchy-punchlines/article_5d9d5db0-1f40-50d2-bcb6-fb0abfd311df.html
+
+> Reminder: extensions are disabled in Incognito by default — enable **Details → Allow in
+> incognito** if testing in an incognito window, or these checks will appear to "not work".
 
 ## Install (unpacked)
 
