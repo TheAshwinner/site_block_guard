@@ -7,7 +7,7 @@ import { hm } from './schedule.js';
 
 export const config = {
   // FR1 — blocked 24/7 (whole domain + subdomains + subpaths).
-  alwaysBlocked: ['linkedin.com', 'facebook.com', 'x.com', 'fandom.com', 'instagram.com', 'tiktok.com', 'spacebattles.com', 'imdb.com', 'wco.tv'],
+  alwaysBlocked: ['linkedin.com', 'facebook.com', 'x.com', 'fandom.com', 'instagram.com', 'tiktok.com', 'spacebattles.com', 'imdb.com', 'wco.tv', 'foxsports.com'],
 
   // FR2/FR3 — blocked only inside the schedule window; embeds follow the same window (FR4).
   scheduledDomains: ['youtube.com', 'youtube-nocookie.com', 'youtu.be'],
